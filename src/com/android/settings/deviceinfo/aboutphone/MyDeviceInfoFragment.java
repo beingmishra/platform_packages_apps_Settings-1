@@ -20,6 +20,8 @@ package com.android.settings.deviceinfo.aboutphone;
 import static com.android.settings.bluetooth.Utils.getLocalBtManager;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -29,6 +31,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.os.UserHandle;
+import android.os.Handler;
 import android.os.UserManager;
 import android.os.SystemProperties;
 import android.os.SELinux;
@@ -42,8 +45,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.content.pm.ResolveInfo;
 import android.widget.TextView;
-import android.util.Pair;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
+import android.util.Pair;
 
 import com.android.settings.Utils;
 import com.android.settings.R;
@@ -66,6 +70,11 @@ public class MyDeviceInfoFragment extends Fragment
     private final Activity mActivity = getActivity();
 
     private Toast mDevHitToast;
+    
+    String[] keks;
+    private final int TAPS_FOR_EASTER = 11;
+    private Toast mTapToast;
+    private int mEasterCountdown = TAPS_FOR_EASTER;
 
     public Context mContext;
 
@@ -79,6 +88,10 @@ public class MyDeviceInfoFragment extends Fragment
         Bundle savedInstanceState) {
 
         mContext = getActivity().getApplicationContext();
+        
+         // Create an ArrayAdapter that will contain all list items
+         ArrayAdapter<String> adapter;
+         keks = mContext.getResources().getStringArray(R.array.kek_tap);
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.aboutphone, container, false);
@@ -130,8 +143,12 @@ public class MyDeviceInfoFragment extends Fragment
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            
+        case R.id.cardview4:
+            kektaps();
+            break;
 
-	case R.id.cardview2:
+	    case R.id.cardview2:
             final DeviceStatusFragment fragment = new DeviceStatusFragment(this);
             replaceFragment(this, fragment);
             break;
@@ -162,6 +179,45 @@ public class MyDeviceInfoFragment extends Fragment
         ft.addToBackStack(null);
         ft.commit();
     }
+    
+    public void kektaps() {
+        if (mEasterCountdown -1 > 0) {
+             if (mTapToast != null) {
+                 mTapToast.cancel();
+                 mTapToast = null;
+             }
+             toasts();
+             mEasterCountdown--;
+             if (mEasterCountdown -1 == 0) {
+                 mEasterCountdown++;
+                 showeasteregg();
+             }
+        }
+    }
+    
+    public void toasts() {
+        mTapToast= Toast.makeText(mContext, keks[11 - mEasterCountdown],
+               mTapToast.LENGTH_SHORT);
+        mTapToast.show();
+    }
+    
+    public void showeasteregg() {
+         if (mTapToast != null) {
+              mTapToast.cancel();
+         }
+         mTapToast = mTapToast.makeText(mContext, "Long live the goddess!",
+               mTapToast.LENGTH_LONG);
+         mTapToast.show();
+         View view = null;
+         final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+         LayoutInflater inflater = (LayoutInflater) mContext
+                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+         view = inflater.inflate(R.layout.dialog_aqua, null);
+         builder.setView(view);
+         builder.setCancelable(true);
+         AlertDialog alertdialog = builder.create();
+         alertdialog.show();
+     }
 
     //Set summaries
     public static void setInfo(String prop, TextView textview) {
@@ -203,6 +259,7 @@ public class MyDeviceInfoFragment extends Fragment
             return gigs;
     }
 
+    //Get internal storage
     public static String getTotalInternalMemorySize() {
         File path = Environment.getDataDirectory();
         StatFs stat = new StatFs(path.getPath());
