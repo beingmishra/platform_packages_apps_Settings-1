@@ -11,5 +11,5 @@
         android:adjustViewBounds="true"
         android:cropToPadding="true"
         android:scaleType="centerInside"
-        android:src="@drawable/dev1" />
+        android:src="@drawable/aqua" />
 </LinearLayout>
