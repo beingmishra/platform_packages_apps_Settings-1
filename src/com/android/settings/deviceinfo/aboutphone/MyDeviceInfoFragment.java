@@ -43,6 +43,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.content.pm.ResolveInfo;
 import android.widget.TextView;
 import android.widget.ArrayAdapter;
@@ -67,6 +68,7 @@ public class MyDeviceInfoFragment extends Fragment
              implements View.OnClickListener{
 
     static String aprox;
+    private String device;
     private final Activity mActivity = getActivity();
 
     private Toast mDevHitToast;
@@ -123,6 +125,34 @@ public class MyDeviceInfoFragment extends Fragment
 
         TextView maintainer = (TextView)view.findViewById(R.id.textView62);
         setInfo("ro.pearl.maintainer", maintainer);
+        
+        ImageView phone = (ImageView)view.findViewById(R.id.phoneimg);
+        device = SystemProperties.get("ro.product.device");
+        switch (device) {
+            
+            case "mido":
+                phone.setImageResource(R.drawable.ic_phone_mido);
+                break;
+                
+            case "vince":
+                phone.setImageResource(R.drawable.ic_phone_vince);
+                break;
+
+            case "tissot":
+                phone.setImageResource(R.drawable.ic_phone_tissot);
+                break;    
+
+            case "kenzo":
+                phone.setImageResource(R.drawable.ic_phone_kenzo);
+                break;
+
+            case "bacon":
+                phone.setImageResource(R.drawable.ic_phone_bacon);
+                break;
+
+            default:
+                break;            
+        }                
 
         //Add click listeners
         if (view != null) {
