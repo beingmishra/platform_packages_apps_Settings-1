@@ -85,4 +85,17 @@
     <string name="kek10">You better worship us if you wanna be reincarnated</string>
     <string name="kek11">www.axisorder.com</string>
 
+    <!-- Pearl Additions -->
+    <string name="pearl_about_info">Credits</string>
+    <string name="credits">Special thanks to:-</string>
+    <string name="credit_1">LineageOS</string>
+    <string name="credit_2">AospExtended</string>
+    <string name="credit_3">PixysOS</string>
+    <string name="credit_4">DirtyUnicorns</string>
+    <string name="credit_5">Xtended</string>
+    <string name="credit_6">PixelExperience</string>
+    <string name="credit_7">AOSiP</string>
+    <string name="credit_8">ArrowOS</string>
+    <string name="credit_9">CypherOS</string>
+    <string name="credit_10">DotOS</string>
 </resources>

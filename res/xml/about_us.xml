@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2016 AospExtended ROM Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="@string/pearl_about_info" >
+
+<PreferenceCategory
+              android:key="credits"
+              android:title="@string/credits" >
+
+       <Preference
+            android:title="@string/credit_1"
+    android:icon="@drawable/ic_los" >
+    <intent
+               android:action="android.intent.action.VIEW"
+               android:data="https://github.com/LineageOS" />
+        </Preference>
+
+       <Preference
+            android:title="@string/credit_2"
+    android:icon="@drawable/ic_aex" >
+    <intent
+               android:action="android.intent.action.VIEW"
+               android:data="https://github.com/AospExtended" />
+        </Preference>
+
+        <Preference
+            android:title="@string/credit_3"
+            android:icon="@drawable/ic_pixys" >
+    <intent
+               android:action="android.intent.action.VIEW"
+               android:data="https://github.com/PixysOS/" />
+        </Preference>
+
+        <Preference
+            android:title="@string/credit_4"
+            android:icon="@drawable/ic_du" >
+    <intent
+               android:action="android.intent.action.VIEW"
+               android:data="https://github.com/dirtyunicorns/" />
+        </Preference>
+
+        <Preference
+            android:title="@string/credit_5"
+            android:icon="@drawable/ic_xtended" >
+    <intent
+               android:action="android.intent.action.VIEW"
+               android:data="https://github.com/Xtended-Pie/" />
+        </Preference>
+
+        <Preference
+            android:title="@string/credit_6"
+            android:icon="@drawable/ic_pe" >
+    <intent
+               android:action="android.intent.action.VIEW"
+               android:data="https://github.com/PixelExperience/" />
+        </Preference>
+
+        <Preference
+            android:title="@string/credit_7"
+            android:icon="@drawable/ic_aosip" >
+    <intent
+               android:action="android.intent.action.VIEW"
+               android:data="https://github.com/AOSiP/" />
+        </Preference>
+
+        <Preference
+            android:title="@string/credit_8"
+            android:icon="@drawable/ic_arrow" >
+    <intent
+               android:action="android.intent.action.VIEW"
+               android:data="https://github.com/ArrowOS/" />
+        </Preference>
+
+        <Preference
+            android:title="@string/credit_9"
+            android:icon="@drawable/ic_cypher" >
+    <intent
+               android:action="android.intent.action.VIEW"
+               android:data="https://github.com/CypherOS/" />
+        </Preference>
+
+        <Preference
+            android:title="@string/credit_10"
+            android:icon="@drawable/ic_dot" >
+    <intent
+               android:action="android.intent.action.VIEW"
+               android:data="https://github.com/DotOS/" />
+        </Preference>
+</PreferenceCategory>
+</PreferenceScreen>
