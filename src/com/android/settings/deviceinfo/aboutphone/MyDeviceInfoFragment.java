@@ -146,7 +146,7 @@ public class MyDeviceInfoFragment extends Fragment
                 phone.setImageResource(R.drawable.ic_phone_kenzo);
                 break;
 
-            case "bacon":
+            case "A0001":
                 phone.setImageResource(R.drawable.ic_phone_bacon);
                 break;
 
