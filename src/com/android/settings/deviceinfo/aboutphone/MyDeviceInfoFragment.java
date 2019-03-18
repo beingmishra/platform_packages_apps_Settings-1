@@ -49,6 +49,7 @@ import android.widget.TextView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 import android.util.Pair;
+import android.util.Log;
 
 import com.android.settings.Utils;
 import com.android.settings.R;
@@ -282,7 +283,7 @@ public class MyDeviceInfoFragment extends Fragment
             memReader.readMemInfo();
             String aprox;
             double totalmem = memReader.getTotalSize();
-            double gb = totalmem / 1073741824;
+            double gb = (totalmem / 1073741824) + 0.1f; //Cause 4gig devices show memory as 3.48 .-.
             int gigs = (int) Math.round(gb);
             return gigs;
     }
