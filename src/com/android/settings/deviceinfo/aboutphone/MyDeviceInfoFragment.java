@@ -29,6 +29,7 @@ import android.app.FragmentTransaction;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.text.TextUtils;
 import android.os.UserHandle;
 import android.os.Handler;
@@ -71,6 +72,7 @@ public class MyDeviceInfoFragment extends Fragment
     static String aprox;
     private String device;
     private final Activity mActivity = getActivity();
+    
 
     private Toast mDevHitToast;
     
@@ -84,13 +86,17 @@ public class MyDeviceInfoFragment extends Fragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+         mContext = getActivity().getApplicationContext();
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
         Bundle savedInstanceState) {
 
-        mContext = getActivity().getApplicationContext();
+        
+        final MediaPlayer mp = MediaPlayer.create(mContext, R.raw.oof);
         
          // Create an ArrayAdapter that will contain all list items
          ArrayAdapter<String> adapter;
@@ -157,7 +163,7 @@ public class MyDeviceInfoFragment extends Fragment
 
             default:
                 break;            
-        }                
+        }        
 
         //Add click listeners
         if (view != null) {
@@ -170,8 +176,17 @@ public class MyDeviceInfoFragment extends Fragment
             cardview3.setOnClickListener(this);
             cardview4.setOnClickListener(this);
         }
-        return view;
+        if (phone != null) {
+            phone.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                     mp.start();
+                     return true;
+                }
+            });
+        }
 
+        return view;
     }
 
     //Launch new fragments on Status and android version
