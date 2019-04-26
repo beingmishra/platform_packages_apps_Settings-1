@@ -167,7 +167,11 @@ public class MyDeviceInfoFragment extends Fragment
 
             case "rolex":
                 phone.setImageResource(R.drawable.ic_phone_rolex);
-                break; 
+                break;
+
+            case "markw":
+                phone.setImageResource(R.drawable.ic_phone_markw);
+                break;             
 
             default:
                 break;            
