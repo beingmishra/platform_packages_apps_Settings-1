@@ -98,6 +98,16 @@ import com.android.settings.wfd.WifiDisplaySettings;
 import com.android.settings.wifi.ConfigureWifiSettings;
 import com.android.settings.wifi.WifiSettings;
 
+import com.shell.extras.fragments.BatteryLightSettings;
+import com.shell.extras.fragments.Buttons;
+import com.shell.extras.fragments.ClockDateSettings;
+import com.shell.extras.fragments.NavbarSettings;
+import com.shell.extras.fragments.NetworkTraffic;
+import com.shell.extras.fragments.PowerMenu;
+import com.shell.extras.fragments.QuickSettings;
+import com.shell.extras.fragments.StatusBarBattery;
+import com.shell.extras.fragments.Ticker;
+
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -191,6 +201,16 @@ public class SearchIndexableResourcesImpl implements SearchIndexableResources {
         addIndex(RecentLocationRequestSeeAllFragment.class);
         addIndex(PreviouslyConnectedDeviceDashboardFragment.class);
         addIndex(BluetoothDashboardFragment.class);
+        
+        addIndex(BatteryLightSettings.class);
+        addIndex(Buttons.class);
+        addIndex(ClockDateSettings.class);
+        addIndex(NavbarSettings.class);
+        addIndex(NetworkTraffic.class);
+        addIndex(PowerMenu.class);
+        addIndex(QuickSettings.class);
+        addIndex(StatusBarBattery.class);
+        addIndex(Ticker.class);        
     }
 
     @Override
