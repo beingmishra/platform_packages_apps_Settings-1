@@ -177,6 +177,10 @@ public class MyDeviceInfoFragment extends Fragment
                 phone.setImageResource(R.drawable.ic_phone_santoni);
                 break;    
 
+            case "beryllium":
+                phone.setImageResource(R.drawable.ic_phone_bery);
+                break;
+
             default:
                 break;            
         }        
