@@ -24,6 +24,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.support.annotation.VisibleForTesting;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.android.settings.R;
@@ -60,6 +61,10 @@ public class BatteryMeterView extends ImageView {
         mDrawable.setBatteryColorFilter(mAccentColorFilter);
         mDrawable.setWarningColorFilter(
                 new PorterDuffColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN));
+        }
+	if ((userStyle == 5 || userStyle == 6)) {
+            findViewById(R.id.battery_header_icon).setVisibility(View.GONE);
+        }
         setImageDrawable(mDrawable);
     }
 
