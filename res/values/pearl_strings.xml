@@ -112,8 +112,4 @@
     <!-- Updater -->
     <string name="pearl_updater_title">System Updater</string>
     <string name="pearl_updater_summary">Pearl System Updater</string>
-
-    <!-- Battery -->
-    <string name="batt_stats">Battery stats</string>
-    <string name="batt_management">Battery management</string>
 </resources>
