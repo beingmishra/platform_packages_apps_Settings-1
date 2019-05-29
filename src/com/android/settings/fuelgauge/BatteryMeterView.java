@@ -61,7 +61,6 @@ public class BatteryMeterView extends ImageView {
         mDrawable.setBatteryColorFilter(mAccentColorFilter);
         mDrawable.setWarningColorFilter(
                 new PorterDuffColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN));
-        }
 	if ((userStyle == 5 || userStyle == 6)) {
             findViewById(R.id.battery_header_icon).setVisibility(View.GONE);
         }
